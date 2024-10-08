@@ -11,6 +11,10 @@ const Home = () => {
         <input type="text" />
 
         <button className="submit-btn">Home button</button>
+
+        <button className="btn">another button</button>
+
+        <img src="/daemon1.jpg" alt="" />
     </div>
   )
 }

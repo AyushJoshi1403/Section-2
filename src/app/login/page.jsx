@@ -1,4 +1,5 @@
 import React from 'react'
+import classes from './login.module.css'
 
 const Login = () => {
   return (
@@ -7,6 +8,7 @@ const Login = () => {
 
         <button className="submit-btn">Login button</button>
 
+        <button className={classes.btn} >Local CSS</button>
     </div>
   )
 }
