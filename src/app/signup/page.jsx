@@ -10,6 +10,13 @@ const SignupSchema = Yup.object().shape({
     .max(50, 'Too Long!')
     .required('Required'),
   email: Yup.string().email('Invalid email').required('Required'),
+  password : Yup.string().required('Password dena bhai')
+    .matches(/[a-z]/, 'Lowecase letter is required')
+    .matches(/[A-Z]/, 'Uppercase letter is required')
+    .matches(/[0-9]/, 'Number letter is required')
+    .matches(/\W/, 'Special character is required'),
+  confirmPassword: Yup.string().required('Password repeat karna bhai')
+    .oneOf([Yup.ref('password'), null], 'Password must match')
 });
 
 const Signup = () => {
