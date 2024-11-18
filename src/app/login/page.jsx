@@ -2,6 +2,7 @@
 import { useFormik } from 'formik';
 import React from 'react'
 import Link from 'next/link';
+import axios from 'axios';
 
 const Login = () => {
 
@@ -10,8 +11,16 @@ const Login = () => {
       email : '',
       password : '',
     },
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
       console.log(values);
+
+      const res = await axios.post('http://localhost:5000/user/authenticate')
+      console.log(res.data);
+      console.log(res.status);
+      if(res.status === 200){
+        localStorage.setItem('token', res.data.token);
+      }
+
     }
   });
 
