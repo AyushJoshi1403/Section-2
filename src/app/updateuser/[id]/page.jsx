@@ -96,7 +96,6 @@ const UpdateUser = () => {
                   {
                     (updateForm) => {
                       return (
-
                         <form onSubmit={updateForm.handleSubmit}>
                           <div className="grid gap-y-4">
                             {/* Form Group */}
