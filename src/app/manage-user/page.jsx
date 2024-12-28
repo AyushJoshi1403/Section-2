@@ -11,7 +11,6 @@ const ManageUser = () => {
     const token = localStorage.getItem('token');
     const router = useRouter();
 
-
     const fetchUsers = () => {
         axios.get('http://localhost:5000/user/getall', {
             headers: {
