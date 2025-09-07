@@ -8,8 +8,8 @@ const Login = () => {
 
   const signinForm = useFormik({
     initialValues: {
-      email : '',
-      password : '',
+      email: '',
+      password: '',
     },
     onSubmit: async (values) => {
       console.log(values);
@@ -17,7 +17,7 @@ const Login = () => {
       const res = await axios.post('http://localhost:5000/user/authenticate')
       console.log(res.data);
       console.log(res.status);
-      if(res.status === 200){
+      if (res.status === 200) {
         localStorage.setItem('token', res.data.token);
       }
 
