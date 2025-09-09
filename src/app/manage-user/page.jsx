@@ -14,7 +14,7 @@ const ManageUser = () => {
     const fetchUsers = () => {
         axios.get('http://localhost:5000/user/getall', {
             headers: {
-                'x-auth-token': token 
+                'x-auth-token': token
             }
         })
             .then((result) => {
@@ -23,7 +23,7 @@ const ManageUser = () => {
             }).catch((err) => {
                 console.log(err);
 
-                if(err?.response?.status === 403){
+                if (err?.response?.status === 403) {
                     toast.error('Your are not authorized to view this page');
                     router.push('/login')
                 }
@@ -74,10 +74,10 @@ const ManageUser = () => {
                                         <td className='p-3'>{user.city}</td>
                                         <td className='p-3'>{new Date(user.createdAt).toDateString()}</td>
                                         <td className='p-3'>
-                                            <button onClick={ () => { deleteUser(user._id) } } className='bg-red-500 py-1 px-3 text-white rounded-full'>Delete</button>
+                                            <button onClick={() => { deleteUser(user._id) }} className='bg-red-500 py-1 px-3 text-white rounded-full'>Delete</button>
                                         </td>
                                         <td className='p-3'>
-                                            <Link href={'/updateuser/'+user._id} className='bg-blue-500 py-1 px-3 text-white rounded-full'>Update</Link>
+                                            <Link href={'/updateuser/' + user._id} className='bg-blue-500 py-1 px-3 text-white rounded-full'>Update</Link>
                                         </td>
                                     </tr>
                                 )
