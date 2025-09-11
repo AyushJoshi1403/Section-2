@@ -13,7 +13,7 @@ const SignupSchema = Yup.object().shape({
     .max(50, 'Too Long!')
     .required('Required'),
   email: Yup.string().email('Invalid email').required('Required'),
-  password : Yup.string().required('Password dena bhai')
+  password: Yup.string().required('Password dena bhai')
     .matches(/[a-z]/, 'Lowecase letter is required')
     .matches(/[A-Z]/, 'Uppercase letter is required')
     .matches(/[0-9]/, 'Number letter is required')
@@ -37,14 +37,14 @@ const Signup = () => {
       console.log(values);
 
       axios.post('http://localhost:5000/user/add', values)
-      .then((result) => {
-        toast.success('User added successfully');
-        router.push('/login');
-      }).catch((err) => {
-        console.log(err);
-        toast.error(err?.response?.data?.message || 'Some error occured');
-      });
-      
+        .then((result) => {
+          toast.success('User added successfully');
+          router.push('/login');
+        }).catch((err) => {
+          console.log(err);
+          toast.error(err?.response?.data?.message || 'Some error occured');
+        });
+
     },
     validationSchema: SignupSchema
   });
