@@ -15,9 +15,9 @@ const TodoList = () => {
         if (e.code === 'Enter') {
             console.log(e.target.value);
 
-            const newTask = { text : e.target.value, completed: false };
+            const newTask = { text: e.target.value, completed: false };
 
-            setTaskList( [ ...taskList, newTask ] );
+            setTaskList([...taskList, newTask]);
 
             e.target.value = '';
         }
@@ -33,7 +33,7 @@ const TodoList = () => {
         const temp = taskList;
         temp[index].completed = !temp[index].completed;
         setTaskList([...temp]);
-    } 
+    }
 
     return (
         <div>
@@ -58,14 +58,14 @@ const TodoList = () => {
                                     <div className='border p-3 rounded mb-4'>
                                         {
                                             task.completed ?
-                                            <p className='bg-green-500 text-white px-3 rounded-full w-fit'>Completed</p> :
-                                            <p className='bg-yellow-500 text-white px-3 rounded-full w-fit'>Pending</p>
+                                                <p className='bg-green-500 text-white px-3 rounded-full w-fit'>Completed</p> :
+                                                <p className='bg-yellow-500 text-white px-3 rounded-full w-fit'>Pending</p>
                                         }
                                         <h2>{task.text}</h2>
 
                                         <div>
                                             <button
-                                                onClick={ () => {deleteTask(index) } }
+                                                onClick={() => { deleteTask(index) }}
                                                 className='bg-red-500 rounded-full py-1 px-3 text-white'
                                             >Delete</button>
                                             <button
