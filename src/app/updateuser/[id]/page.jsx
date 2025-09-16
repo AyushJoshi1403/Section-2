@@ -24,15 +24,15 @@ const UpdateUser = () => {
   const submitForm = (values) => {
     console.log(values);
 
-    axios.put('http://localhost:5000/user/update/'+id, values)
-    .then((result) => {
-      toast.success('User Updated Successfully');
-      router.back();
-    })
-    .catch((err) => {
-      console.log(err);
-      toast.error('Failed to update user');
-    });
+    axios.put('http://localhost:5000/user/update/' + id, values)
+      .then((result) => {
+        toast.success('User Updated Successfully');
+        router.back();
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error('Failed to update user');
+      });
   }
 
 
